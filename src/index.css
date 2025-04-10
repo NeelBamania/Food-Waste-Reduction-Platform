@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-100 text-gray-900 rounded-md hover:bg-gray-200 transition-colors;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-md border focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .input-field {
+  @apply bg-gray-700 border-gray-600 text-white;
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.stat-card {
+  @apply bg-white rounded-2xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+.card-hover {
+  @apply transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-600;
+}
